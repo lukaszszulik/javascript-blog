@@ -1,6 +1,6 @@
 'use strict';
 
-function titleClickHandler(event){
+fun ction titleClickHandler(event){
   console.log('Link was clicked!');
   console.log(event);
 
@@ -8,7 +8,7 @@ function titleClickHandler(event){
 
   const activeLinks = document.querySelectorAll('.titles a.active');
 
-for(let activeLink of activeLinks){
+  for(let activeLink of activeLinks){
   activeLink.classList.remove('active');
 }
 
@@ -24,7 +24,7 @@ for(let activeLink of activeLinks){
 
   const activeArticles = document.querySelectorAll('.post');
 
-for(let activeArticle of activeArticles){
+  for(let activeArticle of activeArticles){
   activeArticle.classList.remove('active');
 }
 
@@ -96,6 +96,6 @@ generateTitleLinks();
 const links = document.querySelectorAll('.titles a');
 console.log(links);
 
-for(let link of links){
+  for(let link of links){
   link.addEventListener('click', titleClickHandler);
 }
