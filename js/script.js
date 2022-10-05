@@ -108,7 +108,7 @@ function generateTags(){
 
   /* START LOOP: for every article: */
 
-  for(let article of articles){}
+  for(let article of articles){
 
     /* find tags wrapper */
 
@@ -124,11 +124,17 @@ function generateTags(){
 
     /* split tags into array */
 
+    const articleTagsArray = articleTags.split(' ');
+
     /* START LOOP: for each tag */
+
+    for(let tag of articleTagsArray){
 
       /* generate HTML of the link */
 
       /* add generated code to html variable */
+
+    }
 
     /* END LOOP: for each tag */
 
@@ -136,5 +142,5 @@ function generateTags(){
 
   /* END LOOP: for every article: */
 }
-
+}
 generateTags();
