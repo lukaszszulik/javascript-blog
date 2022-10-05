@@ -1,6 +1,6 @@
 'use strict';
 
-fun ction titleClickHandler(event){
+function titleClickHandler(event){
   console.log('Link was clicked!');
   console.log(event);
 
@@ -9,8 +9,8 @@ fun ction titleClickHandler(event){
   const activeLinks = document.querySelectorAll('.titles a.active');
 
   for(let activeLink of activeLinks){
-  activeLink.classList.remove('active');
-}
+    activeLink.classList.remove('active');
+  }
 
   /* [DONE] add class 'active' to the clicked link */
 
@@ -25,8 +25,8 @@ fun ction titleClickHandler(event){
   const activeArticles = document.querySelectorAll('.post');
 
   for(let activeArticle of activeArticles){
-  activeArticle.classList.remove('active');
-}
+    activeArticle.classList.remove('active');
+  }
 
   /*  [DONE] get 'href' attribute from the clicked link */
 
@@ -96,6 +96,6 @@ generateTitleLinks();
 const links = document.querySelectorAll('.titles a');
 console.log(links);
 
-  for(let link of links){
+for(let link of links){
   link.addEventListener('click', titleClickHandler);
 }
