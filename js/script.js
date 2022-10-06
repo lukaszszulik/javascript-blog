@@ -129,16 +129,24 @@ function generateTags(){
     /* START LOOP: for each tag */
 
     for(let tag of articleTagsArray){
+      console.log(tag);
 
       /* generate HTML of the link */
 
+      const tagLinkHTMLData = {id: 'tag-' + tag, title: tag};
+      const tagLinkHTML = templates.tagLink(tagLinkHTMLData);
+
       /* add generated code to html variable */
 
+      html = html + tagLinkHTML;
     }
 
     /* END LOOP: for each tag */
 
+
     /* insert HTML of all the links into the tags wrapper */
+
+    titleList.innerHTML = html;
 
   /* END LOOP: for every article: */
 }
