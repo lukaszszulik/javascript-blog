@@ -233,3 +233,23 @@ function generateAuthors(){
   }
 }
 
+function addClickListenersToAuthors(){
+
+  /* [DONE] find all links to authors */
+
+  const allAuthorLinks = document.querySelectorAll('a[href^="#author"]');
+
+  /* [DONE] start loop: for each link */
+
+  for(let allAuthorLink of allAuthorLinks){
+
+    /* [DONE] add AuthorClickHandler as event listener for that link */
+
+    allAuthorLink.addEventListener('click', authorClickHandler);
+    // console.log(allAuthorLink);
+
+  /* [DONE] end loop: for each link */
+  }
+}
+
+addClickListenersToAuthors();
