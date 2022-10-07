@@ -239,6 +239,21 @@ function generateAuthors(){
     const articleAuthor = article.getAttribute('data-author');
     console.log(articleAuthor);
 
+    /* generate HTML of the link */
+
+    const linkHTML = '<a href ="#author' + articleAuthor + '"><span>' + articleAuthor + '</span></a>';
+    console.log('Created html of the link');
+
+    /*  add generated code to html variable */
+
+    html = html + linkHTML;
+    console.log(html);
+
+     /* insert HTML of all the links into the authors wrapper */
+
+     titleList.innerHTML = html;
+
+      /*End loop for every article */
 
   }
 }
