@@ -198,11 +198,19 @@ function tagClickHandler(event){
 function addClickListenersToTags(){
   /* find all links to tags */
 
+  const allTagLinks = document.querySelectorAll('a[href^="#tag-"]');
+
   /* START LOOP: for each link */
+
+  for(let allTagLink of allTagLinks){
 
     /* add tagClickHandler as event listener for that link */
 
+    allTagLink.addEventListener('click' , tagClickHandler);
+    console.log(allTagLink);
+
   /* END LOOP: for each link */
+}
 }
 
 addClickListenersToTags();
@@ -230,6 +238,8 @@ function generateAuthors(){
 
     const articleAuthor = article.getAttribute('data-author');
     console.log(articleAuthor);
+
+
   }
 }
 
