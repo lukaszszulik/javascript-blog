@@ -145,18 +145,20 @@ function generateTags(){
       /* add generated code to html variable */
 
       html = html + linkHTML;
+
+      if(!allTags.hasOwnProperty(tag)){
+
+        /* [NEW] add tag to alltags object */
+
+         allTags[tag] = 1;
+     }    else {
+          allTags[tag]++;
+     }
+
     }
 
     /* [NEW] check if this link is NOT already in allTags */
 
-    if(!allTags.hasOwnProperty(tag)){
-
-    /* [NEW] add tag to alltags object */
-
-      allTags[tag] = 1;
- }    else {
-      allTags[tag]++;
- }
 
     /* END LOOP: for each tag */
 
