@@ -49,8 +49,8 @@ const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
-  optArticleAuthorSelector = '.post-author',
-  optTagsListSelector = '.tags .list',
+  optArticleAuthorSelector = '.post-author .authors',
+  optTagsListSelector = '.tags.list',
   optCloudClassCount = 5,
   optCloudClassPrefix = 'tag-size-';
 
@@ -282,67 +282,51 @@ function addClickListenersToTags(){
 
 addClickListenersToTags();
 
+
 function generateAuthors(){
-  /* find all articles */
+  console.log('Authors were generated');
+
+  /* [DONE] Find all articles */
 
   const articles = document.querySelectorAll(optArticleSelector);
-  console.log(articles);
+  console.log('Articles were found');
 
-  /* START LOOP: for every article: */
+  /* [DONE] Start loop for every article */
 
   for(let article of articles){
 
-    /* find authors wrapper */
+    /* [DONE] find authors wrapper */
 
     const titleList = article.querySelector(optArticleAuthorSelector);
-    console.log(article);
 
-    /* make html variable with empty string */
+    /* [DONE] make html variable with empty string */
 
-    let html='';
+    let html = '';
 
-    /* get author from data-author attribute */
+    /* [DONE] get authors from data-author attribute */
 
-    const articleAuthor = article.getAttribute('data-author');
-    console.log(articleAuthor);
+    const articleAuthors = article.getAttribute('data-author');
 
-    /* generate HTML of the link */
+    /* [DONE] generate HTML of the link */
 
-    const linkHTML = '<a href ="#author' + articleAuthor + '"><span>' + articleAuthor + '</span></a>';
+    const linkHTML = '<li><a href ="#' + articleAuthors + '"></a></li>';
     console.log('Created html of the link');
 
-    /*  add generated code to html variable */
+    /* [DONE] add generated code to html variable */
 
     html = html + linkHTML;
     console.log(html);
 
-     /* insert HTML of all the links into the authors wrapper */
+    /* [DONE] insert HTML of all the links into the authors wrapper */
 
-     titleList.innerHTML = html;
+    titleList.innerHTML = html;
 
-      /*End loop for every article */
+    /* [DONE] End loop for every article */
 
   }
 }
 
-function addClickListenersToAuthors(){
-
-  /* [DONE] find all links to authors */
-
-  const allAuthorLinks = document.querySelectorAll('a[href^="#author"]');
-
-  /* [DONE] start loop: for each link */
-
-  for(let allAuthorLink of allAuthorLinks){
-
-    /* [DONE] add AuthorClickHandler as event listener for that link */
-
-    allAuthorLink.addEventListener('click', authorClickHandler);
-    // console.log(allAuthorLink);
-
-  /* [DONE] end loop: for each link */
-  }
-}
+generateAuthors();
 
 addClickListenersToAuthors();
 
