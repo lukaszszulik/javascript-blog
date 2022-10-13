@@ -97,15 +97,16 @@ function generateTitleLinks(customSelector = ''){
 
   titleList.innerHTML = html;
 
+  const links = document.querySelectorAll('.titles a');
+  console.log(links, "dodano");
+
+  for(let link of links){
+    link.addEventListener('click', titleClickHandler);
+}
+  console.log(titleList , 'dodano liste');
 }
 
 generateTitleLinks();
-const links = document.querySelectorAll('.titles a');
-console.log(links);
-
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
-}
 
 function calculateTagsParams(tags){
   const params = {
@@ -209,8 +210,9 @@ function generateTags(){
 
     for(let tag in allTags){
     /* [NEW] generate code of a link and add it to allTagsHTML */
-
-      const tagLinkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a>(' + CalculateTagClass(allTags[tag], tagsParams) + ')</li>';
+    //const authorLinkHTML = '<li><a href="#author' + author + '">' + author + '</a>(' + allAuthors[author] + ')</li>'; CalculateTagClass(allTags[tag], tagsParams)
+      //const tagLinkHTML = '<li><a class="tag-size-" href="#tag-' + tag + '"><span>' + tag + '</span></a>(' + CalculateTagClass(allTags[tag], tagsParams) + ')</li>';
+      const tagLinkHTML = '<li class="' + CalculateTagClass(allTags[tag], tagsParams) + '"><a href="#tag-' + tag + '">' + tag + '</a></li> ';
       allTagsHTML += tagLinkHTML;
       console.log('tagLinkHTML;', tagLinkHTML);
 
