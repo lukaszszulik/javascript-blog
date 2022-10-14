@@ -177,13 +177,13 @@ function generateTags(){
       /* generate HTML of the link */
 
       //const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
-      const tagHTMLData = {id: tag, tagName: tag};
-      const linkHTML = templates.tagLink(tagHTMLData);
-      console.log('Created HTML of the link');
+      const tagLinkHTMLData = {id: 'tag-' + tag, title: tag};
+      const tagLinkHTML = templates.tagLink(tagLinkHTMLData);
+      //console.log('Created HTML of the link');
 
       /* add generated code to html variable */
 
-      html = html + linkHTML;
+      html = html + tagLinkHTML;
 
       if(!allTags.hasOwnProperty(tag)){
 
